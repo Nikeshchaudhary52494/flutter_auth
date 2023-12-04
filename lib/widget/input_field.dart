@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
 class InputField extends StatelessWidget {
+  final controller;
   final String hintText;
   final Icon icon;
   final bool obscure;
   const InputField({
     Key? key,
+    required this.controller,
     required this.hintText,
     required this.icon,
     required this.obscure,
@@ -16,6 +18,7 @@ class InputField extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: TextField(
+        controller: controller,
         obscureText: obscure,
         cursorColor: Colors.blue,
         decoration: InputDecoration(
